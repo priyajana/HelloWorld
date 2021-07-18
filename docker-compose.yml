@@ -1,0 +1,39 @@
+version: "2"
+
+services:
+  app:
+    build: .
+    image: helloworld
+    stdin_open: true
+    tty: true
+    environment:
+      - dbDriver=com.mysql.cj.jdbc.Driver
+      - dbConnectionUrl=jdbc:mysql://db:3306/HELLOWORLD
+      - dbUserName=root
+      - dbPassword=root
+    networks:
+      - local
+    depends_on:
+      - db
+    command: >
+      sh -c "sleep 30 &&
+         java -cp helloworld.jar:mysql-connector-java-8.0.25.jar HelloWorld"
+
+  db:
+    image: mysql
+    ports:
+      - 3306:3306
+    restart: always
+    volumes:
+      - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - local
+networks:
+  local:
+    driver: bridge
+
+
+
+
