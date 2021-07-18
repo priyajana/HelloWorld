@@ -5,9 +5,9 @@ HELLOWORLD
 
 FILES NEEDED:
 -------------
-helloworld.jar
-mysql-connector-java-8.0.25.jar
-Dockerfile
+helloworld.jar <br/>
+mysql-connector-java-8.0.25.jar<br/>
+Dockerfile<br/>
 docker-compose.yml
 
 STEPS TO FOLLOW:
