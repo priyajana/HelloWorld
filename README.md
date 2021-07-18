@@ -1,6 +1,7 @@
 
-			HELLOWORLD
-			----------
+HELLOWORLD
+----------
+
 
 FILES NEEDED:
 -------------
@@ -37,7 +38,7 @@ To run the application,
 
 	 java -cp helloworld.jar:mysql-connector-java-8.0.25.jar HelloWorld
 	
-In the prompt, <Enter name>,<Enter email>
+In the prompt, enter name and email.
 	
 Values entered will be inserted to table HW_USER in HELLOWORLD database created while running the MYSQL container.
 
